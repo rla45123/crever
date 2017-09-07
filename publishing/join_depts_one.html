@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link href='https://cdn.rawgit.com/openhiun/hangul/14c0f6faa2941116bb53001d6a7dcd5e82300c3f/nanumbarungothic.css' rel='stylesheet' type='text/css'>
+    <link href='css/common.css' rel='stylesheet' type='text/css'>
+  <title>Document</title>
+  <style>
+		.checks {position: relative;}
+
+.checks input[type="checkbox"] {  /* 실제 체크박스는 화면에서 숨김 */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip:rect(0,0,0,0);
+  border: 0
+}
+.checks input[type="checkbox"] + label {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.checks input[type="checkbox"] + label:before {  /* 가짜 체크박스 */
+  content: ' ';
+  display: inline-block;
+  width: 21px;  /* 체크박스의 너비를 지정 */
+  height: 21px;  /* 체크박스의 높이를 지정 */
+  line-height: 21px; /* 세로정렬을 위해 높이값과 일치 */
+  margin: -2px 8px 0 0;
+  text-align: center; 
+  vertical-align: middle;
+  background: #fafafa;
+  border: 1px solid #cacece;
+  border-radius : 3px;
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+}
+.checks input[type="checkbox"] + label:active:before,
+.checks input[type="checkbox"]:checked + label:active:before {
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+
+.checks input[type="checkbox"]:checked + label:before {  /* 체크박스를 체크했을때 */ 
+  content: '\2714';  /* 체크표시 유니코드 사용 */
+  color: #99a1a7;
+  text-shadow: 1px 1px #fff;
+  background: #e9ecee;
+  border-color: #adb8c0;
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+}
+
+
+
+.checks.etrans input[type="checkbox"] + label {
+  padding-left: 30px;
+}
+.checks.etrans input[type="checkbox"] + label:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-top: 0;
+  opacity: .6;
+  box-shadow: none;
+  border-color: #6cc0e5;
+  -webkit-transition: all .12s, border-color .08s;
+  transition: all .12s, border-color .08s;
+}
+
+.checks.etrans input[type="checkbox"]:checked + label:before {
+  position: absolute;
+  content: "";
+  width: 10px;
+  top: -5px;
+  left: 5px;
+  border-radius: 0;
+  opacity:1; 
+  background: transparent;
+  border-color:transparent #6cc0e5 #6cc0e5 transparent;
+  border-top-color:transparent;
+  border-left-color:transparent;
+  -ms-transform:rotate(45deg);
+  -webkit-transform:rotate(45deg);
+  transform:rotate(45deg);
+}
+
+.no-csstransforms .checks.etrans input[type="checkbox"]:checked + label:before {
+  /*content:"\2713";*/
+  content: "\2714";
+  top: 0;
+  left: 0;
+  width: 21px;
+  line-height: 21px;
+  color: #6cc0e5;
+  text-align: center;
+  border: 1px solid #6cc0e5;
+  background:black;
+
+}
+
+.introduce-text{width:400px;margin:auto;padding:12px; 0 12px 0;}
+.introduce-web{
+	width:400px;
+	height:192px;
+	overflow-y:scroll;
+	margin:auto;
+	background:rgba(0,0,0,0.1);
+	box-shadow:0px 5px 20px 5px rgba(0,0,0,0.1);
+}
+.text-line{
+	padding:20px;
+	word-break:break-all;
+}
+.check-span{
+	top: -4px;
+    left: 262px;
+}
+  </style>
+ </head>
+ <body>
+	<header class="head">
+		<div class="box-container">
+			<ul class="inline-ul head-menu clearfix">
+				<li class="pull-left">				
+					<a href="#" class="header-button">
+						<div class="line-top"></div>
+						<div class="line-middle"></div>
+						<div class="line-bottom"></div>
+					</a>
+				</li>
+				<li><a href="" class="head-logo"><img  src="img/logo.png" alt="" title=""/></a></li>
+				<li class="pull-right"><a href="" ><img src="img/person.png" class="head-user "  alt="" title=""/>사용자 아이디</a></li>
+			</ul>
+		</div>
+	</header>
+	<section>
+		<div class="box-container  clearfix text-center" style="">
+			<h1 style="margin-top:70px;font-size:30px;font-size:30px;font-weight:100;">안녕하세요!</h1>
+		</div>
+		<div class="box-container clearfix text-center">
+			<p class="text-center" style="font-size:15px;font-weight:bold;margin:25px auto 10px auto;">크레버에 오신 것을 환영합니다.</p>
+		</div>
+		<div class="box-container  clearfix" style="">
+			<p class="text-center" style="font-size:15px;font-weight:bold;margin:20px auto 10px auto;">
+				크레버 이용약관, 정보활용 및 개인정보 3자 제공에 모두 동의합니다.
+			</p>
+		</div>
+		<div class="box-container height-line clearfix text-center">
+			<div class="checks etrans">
+			  <input type="checkbox" id="ex_chk3"> 
+			  <label for="ex_chk3">전체동의</label> 
+			</div>
+		</div>	
+		<div class="box-container  clearfix ">
+			<div class="introduce-text">
+				<h5>크레버 이용약관 (필수)
+				  <input type="checkbox" style="float:right;width:15px;height:15px;"> 
+				</h5>
+				<p>이용약관 및 개인정보 수집 및 활용에 모두 동의해주세요.</p>
+			</div>
+			<div class="introduce-web" style="overflow-x:hidden">
+				<p class="text-line">
+				fewafewfewafewfewafewfewafewfewafewfewafewfewafewfewafewfewafewfewafewfewafewfewafewfewafew
+				</p>
+			</div>
+		</div>
+		<div class="box-container  clearfix ">
+			<div class="introduce-text">
+				<h5>개인정보 제3자에 대한 제공 및 공유에 동의  (필수)
+				  <input type="checkbox" style="float:right;width:15px;height:15px;"> 
+				</h5>
+			</div>
+			<div class="introduce-web" style="overflow-x:hidden">
+				<p class="text-line">
+				fewafewfewafewfewafewfewafewfewafewfewafewfewafewfewafewfewafewfewafewfewafewfewafewfewafew
+				</p>
+			</div>
+		</div>
+		<style>
+		.next-btn{
+			background:transparent;
+			color:black;
+			border:1px solid black;
+			width:200px;
+			height:40px;
+		}
+		</style>
+		<div class="box-container height-line clearfix text-center">
+			<button class="next-btn" style="font-size:20px;">다음</button>
+		</div>	
+	</section>
+	<footer>
+		<div class="box-container height-line clearfix">
+			<ul class="foot-menu">
+				<li><a href="#" ><img src="img/foot-logo.png" class="foot-img"/></a></li>
+				<li><a href="#" >기본주소 입력</a></li>
+				<li><a href="#" >세부주소 입력</a></li>
+				<li><a href="#" >02.222.2222</a></li>
+				<li><a href="#" >info@crever.com</a></li>
+				<li><a href="#" >© 2017 CREVER. All Rights Reserved.</a></li>
+			</ul>
+		</div>
+	</footer>
+ </body>
+</html>

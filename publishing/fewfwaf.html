@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+#div1 {
+    white-space: nowrap; 
+    width: 12em; 
+    overflow: hidden;
+    text-overflow: clip; 
+    border: 1px solid #000000;
+}
+
+#div2 {
+    white-space: nowrap; 
+    width: 30%; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    border: 1px solid #000000;
+}
+#div2.test {
+    white-space: nomal; 
+    width: 30%; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    border: 1px solid #000000;
+}
+
+/*  */
+
+</style>
+</head>
+<body>
+
+<!-- <p>The following two divs contains a long text that will not fit in the box. As you can see, the text is clipped.</p>
+
+<p>This div uses "text-overflow:clip":</p>
+<div id="div1">This is some long text that will not fit in the box</div>
+ -->
+<p>This div uses "text-overflow:ellipsis":</p>
+<div id="div2">This is some long text that will not fit in the box This is some long text that will not fit in the box This is some long text that will not fit in the box</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+	$("#div2").click(function(){
+		var state = $(this).css("white-space");
+		if(state == "nowrap"){
+			$(this).css("white-space","normal");
+		}else if(state == "normal"){
+			$(this).css("white-space","nowrap");
+		}
+
+	});
+</script>
+</body>
+</html>
