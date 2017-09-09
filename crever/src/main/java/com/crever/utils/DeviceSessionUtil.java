@@ -1,0 +1,66 @@
+package com.crever.utils;
+
+import javax.servlet.http.HttpServletRequest;
+
+public class DeviceSessionUtil {
+
+	/**
+	 * @param :
+	 *            요청request 객체
+	 * @return : ip 번호
+	 */
+	public String getClientIP(HttpServletRequest request) {
+		String ip = request.getHeader("X-FORWARDED-FOR");
+		if (ip == null || ip.length() == 0) {
+			ip = request.getHeader("Proxy-Client-IP");
+		}
+		if (ip == null || ip.length() == 0) {
+			ip = request.getHeader("WL-Proxy-Client-IP"); // 웹로직
+		}
+		if (ip == null || ip.length() == 0) {
+			ip = request.getRemoteAddr();
+		}
+		return ip;
+	}
+
+	/**
+	 * @param :접속
+	 *            유저의 요청 request 객체
+	 * @return :모바일 : M, 데스크탑 : P 자바단에서 분기처리가 필요할시 사용
+	 */
+	/*public static char deviceCheck(HttpServletRequest request) {
+		String userAgent = (String) request.getHeader("User-Agent");
+		String[] mobile = { "iPhone", "iPod", "Android", "BlackBerry", "Windows CE", "Nokia", "Webos", "Opera Mini",
+				"SonyEricsson", "Opera Mobi", "IEMobile" };
+		int j = -1;
+		char device = 'N';
+		if (userAgent != null && !userAgent.equals("")) {
+			for (String mo : mobile) {
+				j = userAgent.indexOf(mo);
+				device = j > -1 ? 'M' : 'P';
+			}
+		}
+		return device;
+	}*/
+	public static char deviceCheck(HttpServletRequest request) {
+		String userAgent = (String) request.getHeader("User-Agent");
+		String[] mobile = { "iPhone", "iPod", "Android", "BlackBerry", "Windows CE", "Nokia", "Webos", "Opera Mini",
+				"SonyEricsson", "Opera Mobi", "IEMobile" };
+		int j = -1;
+		char device = 'N';
+		if (userAgent != null && !userAgent.equals("")) {
+			for (String mo : mobile) {
+				j = userAgent.indexOf(mo);
+				if(j > -1){
+					device = 'M';
+					break;
+				}else{
+					device = 'P';
+				}
+				
+			}
+		}
+		return device;
+	}
+	
+}

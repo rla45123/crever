@@ -1,0 +1,15 @@
+mysql.user.name=root
+mysql.user.pw=35tkfcjsdjrdnjs!
+mysql.ip=jdbc:log4jdbc:mysql://222.109.2.168:3306/crever
+svn.ip=222.109.2.168:443/svn/JAVA/CREVER/
+
+cafe24.id=cicadateam3
+cafe24.pw=35tkfcjsdjrdnjs!
+cafe24.BastDomain=cicadateam3.cafe24.com
+cafe24.domain=crever.or.kr
+
+cafe24.mysql.id=cicadateam3
+cafe24.mysql.pw=ddncjf11!
+
+cafe24.ftp.id=cicadateam3
+cafe24.ftp.pw=ddncjf11!

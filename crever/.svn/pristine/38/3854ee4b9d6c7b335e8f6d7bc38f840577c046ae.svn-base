@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc" xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<!-- 	인터셉터 사용할거면 밑에 주석 해제하면 바로 적용됨 -->
+	<!-- 로그인 체크 해야되는 url은 밑에 객체를 타면됨
+	<mvc:interceptors>
+		<mvc:interceptor> -->
+
+			<!-- 해당 url 요청 받을시
+			<mvc:mapping path="/**" />-->
+			
+<!-- 			밑의 url 들어올시에는 제외대상 
+			<mvc:exclude-mapping path="/resources/**" />
+			<mvc:exclude-mapping path="/css/**" />
+			<mvc:exclude-mapping path="/img/**" />
+			<mvc:exclude-mapping path="/plugin/**" />
+			<mvc:exclude-mapping path="/script/**" />
+			<mvc:exclude-mapping path="/sms/**" />
+			<mvc:exclude-mapping path="/ajax/**" />
+			<mvc:exclude-mapping path="/intro" />
+			<mvc:exclude-mapping path="/login" />
+			<mvc:exclude-mapping path="/profile" />
+			<mvc:exclude-mapping path="/join" />
+			<mvc:exclude-mapping path="/" />
+			
+			<bean class="com.crever.listener.Interceptor"  />
+		</mvc:interceptor>-->
+		
+		<!--로그인 체크 안할거는 밑에 객체를 타면됨
+		<mvc:interceptor>
+			<mvc:mapping path="/" />
+			<mvc:mapping path="/intro" />
+			<bean class="com.crever.listener.InterceptorLogin" />
+		</mvc:interceptor>
+	</mvc:interceptors>-->
+</beans>

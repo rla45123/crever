@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.MainMapper">
+
+	<select id="image_add" parameterType="com.crever.utils.DynamicValueObject" resultType="int">
+            insert into	all_image(path, table_name, table_index, ori_image, aft_image, typeTS) 
+            values(#{path}, #{table_name}, #{index}, #{ori_image}, #{aft_image}, #{typeTS})
+	</select>
+</mapper>

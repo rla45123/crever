@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.AjaxMapper">
+
+	<select id="schedule_list" parameterType="com.crever.utils.DynamicValueObject" resultType="com.crever.utils.DynamicValueObject">
+      select 
+      	stt.time, st.stateYN, st.user_id from (  
+			select
+				time, stateYN, user_id
+			from
+				schedule_time
+			where
+				user_id = #{user_id}
+				and detail_subject_code = #{detail_subject_code}
+				and date_to = #{date_to}
+			) as st
+		right outer join schedule_time_temp as stt
+		on st.time = stt.time
+    order by 
+    	stt.time;
+            
+	</select>
+</mapper>

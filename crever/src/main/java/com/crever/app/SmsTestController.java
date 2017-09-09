@@ -1,0 +1,36 @@
+package com.crever.app;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.crever.utils.sms.SendSMS;
+
+@Controller
+public class SmsTestController {
+	
+	@RequestMapping(value="/send",method=RequestMethod.GET)
+	public String test() throws Exception{
+	
+		return "sms/sms_insert";
+	}
+	
+	@RequestMapping(value="/send",method=RequestMethod.POST)
+	public String snssend(
+				@RequestParam("phonenumber") String phonenumber,
+				@RequestParam("recivename") String recivename
+			)throws Exception{
+		
+		
+		
+		System.out.println("******** smstestController start ********");
+		System.out.println("phonenumber :"+phonenumber);
+		System.out.println("recivename :"+recivename);
+		
+		SendSMS sms = new SendSMS();
+		sms.Senduser(phonenumber,recivename);
+		
+		return "sms/sms_insert";
+	}
+}

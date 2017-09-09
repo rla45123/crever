@@ -1,0 +1,19 @@
+package com.crever.utils.sms;
+
+/**
+ * 
+ * Config.java
+ * : 
+ *
+ */
+public final class Config {
+	
+	public static final String appid = "rlaskawns8";
+	public static final String apikey = "2a6706c4448611e693b90cc47a1fcfae";
+	public static final String content = "님 의 회원가입을 진심으로 축하합니다 </br>. -crever-";
+	public static final String sender = "01051492701";
+//	public static final String receiver = "01051492701";
+	
+}
+
+

@@ -1,0 +1,15 @@
+package com.crever.controller.user;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class LoginWithJoinContoller {
+
+	@RequestMapping( value = "/intro"  )
+	public String intro(){
+		
+		return "layout/l_login";
+	}
+	
+}

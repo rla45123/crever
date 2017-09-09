@@ -1,0 +1,49 @@
+package com.crever.app;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.crever.utils.DeviceSessionUtil;
+
+/**
+ * Handles requests for the application home page.
+ */
+@Controller
+public class HomeController {
+	
+	@RequestMapping(value="/",method=RequestMethod.GET)
+	public String main(HttpServletRequest request , HttpSession session){
+		char device = DeviceSessionUtil.deviceCheck(request);
+		
+		//device의 값에 따라 피시 모바일 분기 
+		System.out.println(device);
+		
+		System.out.println("session은??" + session.getAttribute("test"));
+		
+		if(null == session.getAttribute("test") ||  "".equals(session.getAttribute("test")) ){
+			request.setAttribute("session_yn" , "n");
+		}else{
+			request.setAttribute("session_yn" , "y");
+		}
+		
+		
+		
+		switch (device) {
+		case 'P':
+			break;
+		case 'M':
+			break;
+		case 'N':
+			return "layout/l_index";
+		default:
+			break;
+		}
+		
+		return "test/DateSch";
+	}
+	
+}
